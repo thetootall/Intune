@@ -1,3 +1,8 @@
+#####################################################################
+# Script developed by Chris Blackburn & Roger Truss
+# Info @ https://github.com/thetootall/EndpointManager
+#####################################################################
+
 # stop onedrive
 Get-Process -Name onedrive -ErrorAction SilentlyContinue | Stop-Process -Force -ErrorAction SilentlyContinue
 
@@ -18,6 +23,7 @@ $UnloadedHives = Compare-Object $ProfileList.SID $LoadedHives.SID | Select-Objec
 
 # Loop through each profile on the machine
 Foreach ($item in $ProfileList) {
+
     # Load User ntuser.dat if it's not already loaded
     IF ($item.SID -in $UnloadedHives.SID) {
         reg load HKU\$($Item.SID) $($Item.UserHive) | Out-Null
@@ -34,11 +40,11 @@ Foreach ($item in $ProfileList) {
     get-childitem -Path "registry::HKEY_USERS\$($Item.SID)\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Desktop\NameSpace" | Where-Object{$_.name -like "*04271989*"} | remove-item -Recurse -force -Verbose -ErrorAction SilentlyContinue
     get-childitem -Path "registry::HKEY_USERS\$($Item.SID)\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Desktop\NameSpace" | Where-Object{$_.name -like "*018D5C66*"} | remove-item -Recurse -force -Verbose -ErrorAction SilentlyContinue
     
-    #Enable ADAL
+    #Reset the login state
     #Set variables to indicate value and key to set
     $RegistryPath = "registry::HKEY_USERS\$($Item.SID)\SOFTWARE\Microsoft\OneDrive"
-
-    #Reset the login state
+    
+    #Update Keys
     set-ItemProperty -Path $RegistryPath -Name EnableADAL -Value 1 -Force
     set-ItemProperty -Path $RegistryPath -Name SilentBusinessConfigCompleted -Value 0 -Force
     set-ItemProperty -Path $RegistryPath -Name DefaultToBusinessFRE -Value 0 -Force
@@ -48,7 +54,6 @@ Foreach ($item in $ProfileList) {
 
     #Reset Login for background launch on user login
     New-ItemProperty -Path "registry::HKEY_USERS\$($Item.SID)\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" -Name OneDrive -Value '"C:\Program Files\Microsoft OneDrive\OneDrive.exe" /background' -PropertyType String -Force
-
 
     #####################################################################
  
