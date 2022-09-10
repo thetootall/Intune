@@ -1,5 +1,5 @@
 # EndpointManager
-Script to aid management of endpoints
+Making lives easier using Microsoft Intune, I mean, Endpoint Manager since 2022 😎
 <html>
 <h2>Reset OneDrive</h2>
 <p>This was a <b>bear</b> of a script to get working for an AD domain to domain profile migration.</p>
