@@ -1,6 +1,9 @@
 # EndpointManager
 Making lives easier using Microsoft Intune, I mean, Endpoint Manager since 2022 😎
 <html>
+<h2>deploy-remotehelp.ps1</h2>
+<p>This script fills in a gap for Microsoft not having Remote Help in the Microsoft store app and only deploying as a W32App.</p>  
+<p>Leverages the Microsoft Graph to connect to the MgGraph and IntuneWin32 modules, and pulls down the prepackaged application from my website <b>NOTE: you can add in code to pull down the latest version but i wanted to save time and make the app available to anyone at <a href="https://memphistech.net/tools/remotehelpinstaller.intunewin">remotehelpinstaller.intunewin</a></b></p>
 <h2>Reset OneDrive</h2>
 <p>This was a <b>bear</b> of a script to get working for an AD domain to domain profile migration.</p>
 <p>Microsoft official stance when doing a domain migration is the "wipe and reload" approach however in the effort to "do no harm" in causing the user to have to reinstall applications, configure their profile, etc, this is typically a non-starter in a number of migrations.</p>
