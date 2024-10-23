@@ -23,9 +23,11 @@ Making lives easier using Microsoft Intune, I mean, Endpoint Manager since 2022 
 <h2>Global Protect Secure Client</h2>
 Still waiting for Microsoft to add this to the app catalog (even if its the Enterprise version in the Intune suite)
 Grab the <a href="https://memphistech.net/tools/globalsecureaccessclient.intunewin">globalsecureaccessclient.intunewin</a> file and use these for the Intune app
-<h3>Install</h3>
+<h3>Version</h3>
+2.1.149
+<h3>Install path</h3>
 GlobalSecureAccessClient.exe /install /quiet /norestart
-<h3>Uninstall</h3>
+<h3>Uninstall path</h3>
 GlobalSecureAccessClient.exe /uninstall /quiet /norestart
 <h3>MSI detection code</h3>
 {4DD54F7E-2C84-4A52-AB11-EAC4FABB2551} 
