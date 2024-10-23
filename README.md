@@ -20,5 +20,13 @@ Making lives easier using Microsoft Intune, I mean, Endpoint Manager since 2022 
 <h2>Reset Intune</h2>
 <p>This is a big one. Microsoft does NOT make it easy for you to transition a PC from one domain or tenant easily. In talking with their PSS team, their offical stance is a rebuild is the support approach for PC migration. I've worked many M&A projects over the years and Ive only seen 20% adopt this methodology - all the rest prefer to use tools to orchestrate the transition from one environment to another. </p>
 <p>Moving between AD to AD isnt difficult with a number of tools out there (I like the Quest BinaryTree Migration Pro Active Directory Pro toolset for its ability to execute and orchestrate tasks) that can make this possible, but one thing that you DONT hear is that if you migrate a PC, it might be in another Azure AD tenant, but the MDM registration is still tied to the old tenant. This was the reason and birth for this script.</p>
-
+<h2>Global Protect Secure Client</h2>
+Still waiting for Microsoft to add this to the app catalog (even if its the Enterprise version in the Intune suite)
+Grab the intunewin file and use this
+<h3>Install</h3>
+GlobalSecureAccessClient.exe /install /quiet /norestart
+<h3>Uninstall</h3>
+GlobalSecureAccessClient.exe /uninstall /quiet /norestart
+<h3>MSI detection code</h3>
+{4DD54F7E-2C84-4A52-AB11-EAC4FABB2551} 
 </html>
