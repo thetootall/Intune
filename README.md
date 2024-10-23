@@ -22,7 +22,7 @@ Making lives easier using Microsoft Intune, I mean, Endpoint Manager since 2022 
 <p>Moving between AD to AD isnt difficult with a number of tools out there (I like the Quest BinaryTree Migration Pro Active Directory Pro toolset for its ability to execute and orchestrate tasks) that can make this possible, but one thing that you DONT hear is that if you migrate a PC, it might be in another Azure AD tenant, but the MDM registration is still tied to the old tenant. This was the reason and birth for this script.</p>
 <h2>Global Protect Secure Client</h2>
 Still waiting for Microsoft to add this to the app catalog (even if its the Enterprise version in the Intune suite)
-Grab the intunewin file and use this
+Grab the <ahref="https://memphistech.net/tools/globalsecureaccessclient.intunewin">globalsecureaccessclient.intunewin"> file and use these for the Intune app
 <h3>Install</h3>
 GlobalSecureAccessClient.exe /install /quiet /norestart
 <h3>Uninstall</h3>
