@@ -1,6 +1,8 @@
 # EndpointManager
 Making lives easier using Microsoft Intune, I mean, Endpoint Manager since 2022 😎
 <html>
+<h2>Great to remotely upgrade Powershell</h2>
+Invoke-Expression "& { $(Invoke-RestMethod 'https://aka.ms/install-powershell.ps1') } -useMSI -Quiet -EnablePSRemoting"
 <h2>deploy-remotehelp.ps1</h2>
 <p>This script fills in a gap for Microsoft not having Remote Help in the Microsoft store app and only deploying as a W32App.</p>  
 <p>Leverages the Microsoft Graph to connect to the MgGraph and IntuneWin32 modules, and pulls down the prepackaged application from my website <b>NOTE: you can add in code to pull down the latest version but i wanted to save time and make the app available to anyone at <a href="https://memphistech.net/tools/remotehelpinstaller.intunewin">remotehelpinstaller.intunewin</a></b></p>
